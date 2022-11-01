@@ -9,12 +9,16 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="tb_conteudos")
-public class Conteudo {
+@Table(name="tb_cursos")
+public class Curso {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	
+	@NotNull
+	@Size(min=5, max=100)
+	private String curso;
 	
 	@NotNull
 	@Size(min=5, max=100)
@@ -24,11 +28,6 @@ public class Conteudo {
 	@Size(min=10, max=200)
 	private String descricao;
 	
-	@NotNull
-	private String url;
-	
-	private Long ordemConteudo;
-	
 
 	public Long getId() {
 		return id;
@@ -36,6 +35,14 @@ public class Conteudo {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getCurso() {
+		return curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
 	}
 
 	public String getTitulo() {
@@ -52,21 +59,5 @@ public class Conteudo {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	public Long getOrdemCurso() {
-		return ordemConteudo;
-	}
-
-	public void setOrdemCurso(Long ordemCurso) {
-		this.ordemConteudo = ordemCurso;
 	}
 }
