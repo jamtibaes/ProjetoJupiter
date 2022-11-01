@@ -27,7 +27,7 @@ public class Conteudo {
 	@NotNull
 	private String url;
 	
-	private Long ordemCurso;
+	private Long ordemConteudo;
 	
 
 	public Long getId() {
@@ -63,10 +63,10 @@ public class Conteudo {
 	}
 
 	public Long getOrdemCurso() {
-		return ordemCurso;
+		return ordemConteudo;
 	}
 
 	public void setOrdemCurso(Long ordemCurso) {
-		this.ordemCurso = ordemCurso;
+		this.ordemConteudo = ordemCurso;
 	}
 }
