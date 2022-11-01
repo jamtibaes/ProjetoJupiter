@@ -62,11 +62,11 @@ public class Conteudo {
 		this.url = url;
 	}
 
-	public Long getOrdemCurso() {
+	public Long getOrdemConteudo() {
 		return ordemConteudo;
 	}
 
-	public void setOrdemCurso(Long ordemCurso) {
-		this.ordemConteudo = ordemCurso;
+	public void setOrdemConteudo(Long ordemConteudo) {
+		this.ordemConteudo = ordemConteudo;
 	}
 }
