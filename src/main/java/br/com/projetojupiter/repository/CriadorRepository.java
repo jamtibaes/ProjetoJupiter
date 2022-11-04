@@ -11,5 +11,4 @@ import br.com.projetojupiter.model.Criador;
 public interface CriadorRepository extends JpaRepository<Criador, Long> {
 	
 	public Optional<Criador> findByCriador(String email);
-
 }
