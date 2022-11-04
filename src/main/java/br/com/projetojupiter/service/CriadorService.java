@@ -26,7 +26,7 @@ public class CriadorService {
 		return repository.save(criador);
 	}
 	
-	public Optional<LoginCriador> logar(Optional<LoginCriador> loginCriador) {
+	public Optional<LoginCriador> login(Optional<LoginCriador> loginCriador) {
 		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		Optional<Criador> criador = repository.findByCriador(loginCriador.get().getEmail());
