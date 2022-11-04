@@ -12,12 +12,12 @@ public class UserDetailsImplCriador implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 	
-	private String CriadorEmail;
-	private String CriadorPassword;
+	private String criadorEmail;
+	private String criadorPassword;
 
 	public UserDetailsImplCriador(Criador criad) {
-		CriadorEmail = criad.getEmail();
-		CriadorPassword = criad.getSenha();
+		criadorEmail = criad.getEmail();
+		criadorPassword = criad.getSenha();
 	}
 
 	public UserDetailsImplCriador() {
@@ -31,12 +31,12 @@ public class UserDetailsImplCriador implements UserDetails {
 
 	@Override
 	public String getPassword() {
-		return CriadorPassword;
+		return criadorPassword;
 	}
 
 	@Override
 	public String getUsername() {
-		return CriadorEmail;
+		return criadorEmail;
 	}
 
 	@Override
