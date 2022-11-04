@@ -20,7 +20,7 @@ import br.com.projetojupiter.repository.ConteudoRepository;
 
 @RestController
 @RequestMapping("/conteudos")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders="*")
 public class ConteudoController {
 	
 	@Autowired

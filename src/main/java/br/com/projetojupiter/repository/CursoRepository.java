@@ -10,5 +10,7 @@ import br.com.projetojupiter.model.Curso;
 @Repository
 public interface CursoRepository extends JpaRepository <Curso, Long> {
 	
-	public List<Curso> findAllCursoContainingIgnoreCase(String curso);
+	public List<Curso> findAllByCursoContainingIgnoreCase(String curso);
+	
+	public List<Curso> findAllByTituloContainingIgnoreCase(String titulo);
 }

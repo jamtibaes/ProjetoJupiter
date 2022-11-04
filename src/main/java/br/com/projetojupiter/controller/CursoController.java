@@ -40,12 +40,12 @@ public class CursoController {
 	
 	@GetMapping("/curso/{curso}")
 	public ResponseEntity<List<Curso>> getByCurso(@PathVariable String curso) {
-		return ResponseEntity.ok(repository.findAllCursoContainingIgnoreCase(curso));
+		return ResponseEntity.ok(repository.findAllByCursoContainingIgnoreCase(curso));
 	}
 	
 	@GetMapping("/titulo/{titulo}")
 	public ResponseEntity<List<Curso>> getByTitulo(@PathVariable String titulo) {
-		return ResponseEntity.ok(repository.findAllCursoContainingIgnoreCase(titulo));
+		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	}
 	
 	@PostMapping
