@@ -52,8 +52,20 @@ public class Usuario {
 	@JsonIgnoreProperties("usuario")
 	private List<Cartao> cartao;
 	
+	@OneToMany(mappedBy= "usuario", cascade=CascadeType.ALL)
+	@JsonIgnoreProperties("usuario")
+	private List<Pedido> pedido;
+	
 
 	
+	public List<Pedido> getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(List<Pedido> pedido) {
+		this.pedido = pedido;
+	}
+
 	public List<Cartao> getCartao() {
 		return cartao;
 	}
