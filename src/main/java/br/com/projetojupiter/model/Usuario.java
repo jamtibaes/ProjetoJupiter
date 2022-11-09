@@ -1,6 +1,5 @@
 package br.com.projetojupiter.model;
 
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,8 +22,6 @@ public class Usuario {
 	@Size(min=3, max=100)
 	private String nome;
 	
-	@NotNull
-	private Date dataNascimento;
 	
 	@NotNull
 	@Size(min=3, max=100)
@@ -58,13 +55,6 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public Date getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
 
 	public String getEmail() {
 		return email;
