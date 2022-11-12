@@ -2,6 +2,7 @@ package br.com.projetojupiter.controller;
 
 import java.util.List;
 
+import br.com.projetojupiter.service.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,14 +23,20 @@ import br.com.projetojupiter.repository.CursoRepository;
 @RequestMapping("/curso")
 @CrossOrigin(origins = "*", allowedHeaders="*")
 public class CursoController {
+
+	@Autowired
+	private CursoService cursoService;
+
 	
 	@Autowired
 	private CursoRepository repository;
-	
-	@GetMapping
-	public ResponseEntity<List<Curso>> getAll() {
-		return ResponseEntity.ok(repository.findAll());
+
+	// localhost:8080/curso/1
+	@GetMapping("/{usuario_id}")
+	public ResponseEntity<List<Curso>> getAll(@PathVariable Long usuario_id) {
+		return ResponseEntity.ok(cursoService.getAll(usuario_id));
 	}
+
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Curso> getById(@PathVariable Long id) {
