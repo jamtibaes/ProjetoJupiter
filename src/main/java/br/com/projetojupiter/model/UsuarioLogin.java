@@ -3,7 +3,6 @@ package br.com.projetojupiter.model;
 public class UsuarioLogin {
 
     private String email;
-
     private String senha;
     private String token;
 
