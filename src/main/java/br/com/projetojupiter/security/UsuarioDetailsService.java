@@ -1,4 +1,4 @@
-package br.com.projetojupiter.controller.security;
+package br.com.projetojupiter.security;
 
 import br.com.projetojupiter.model.Usuario;
 import br.com.projetojupiter.repository.UsuarioRepository;

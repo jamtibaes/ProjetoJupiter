@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -43,26 +44,29 @@
 		</dependency>
 		
 		<!-- Dependencia Security -->
-		<!--<dependency>
+		<dependency>
             <groupId>org.springframework.boot</groupId>
      		<artifactId>spring-boot-starter-security</artifactId>
-        </dependency>-->
+        </dependency>
         
         <!-- Dependencia de criptografia de senha -->
-        <!--<dependency>
+        <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
-        </dependency>-->
+        </dependency>
+
+
+
 		
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
+<!--		<plugins>
+			&lt;!&ndash;<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
+			</plugin>&ndash;&gt;
+		</plugins>-->
 	</build>
 
 </project>
