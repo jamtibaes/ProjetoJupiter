@@ -21,14 +21,14 @@ public class BasicSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception{
-        return authenticationConfiguration.getAuthenticationManager();
-    }
+    //@Bean
+    //public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception{
+    //    return authenticationConfiguration.getAuthenticationManager();
+    //}
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.httpBasic();
+       
 
         http.sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -40,10 +40,10 @@ public class BasicSecurityConfig {
                 .antMatchers(AUTH_WHITELIST).permitAll()
                 .antMatchers("/usuario/login").permitAll()
                 .antMatchers("/usuario/register").permitAll()
+                .antMatchers("/criador/register").permitAll()
+                .antMatchers("/criador/login").permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
-                .anyRequest().authenticated()
-
-        );
+                .anyRequest().authenticated()).httpBasic();
 
         return http.build();
     }
@@ -64,9 +64,9 @@ public class BasicSecurityConfig {
             // other public endpoints of your API may be appended to this array
             "/usuario/login",
             "/usuario/register",
-            "/curso/"
+            "/curso",
+            "/conteudos",
+            "/criador/login",
+            "/criador/register"
     };
-
-
-
 }
