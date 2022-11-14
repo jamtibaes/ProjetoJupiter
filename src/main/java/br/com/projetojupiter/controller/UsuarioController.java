@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import br.com.projetojupiter.model.UsuarioLogin;
+import br.com.projetojupiter.request.EmailUsuarioRequest;
+import br.com.projetojupiter.response.MensagemResponse;
 import br.com.projetojupiter.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,6 +44,16 @@ public class UsuarioController {
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(usuarioService.cadastrarUsuario(usuario));
 	}
+
+	@GetMapping("/ativo")
+	public ResponseEntity<MensagemResponse> ativo(@RequestBody EmailUsuarioRequest usuario){
+		String email = usuario.getEmail();
+		return ResponseEntity.status(HttpStatus.OK)
+				.body(usuarioService.ehUsuarioAtivo(email));
+	}
+
+
+
 
 
 	

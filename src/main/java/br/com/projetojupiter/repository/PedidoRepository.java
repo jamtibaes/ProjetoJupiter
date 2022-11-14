@@ -6,9 +6,11 @@ import org.springframework.stereotype.Repository;
 
 import br.com.projetojupiter.model.Pedido;
 
+import java.util.Optional;
+
 @Repository
 public interface PedidoRepository extends JpaRepository<Pedido, Long>{
 
-    Pedido findByUsuario (Usuario usuario);
+    Optional<Pedido> findByUsuario (Usuario usuario);
 
 }
