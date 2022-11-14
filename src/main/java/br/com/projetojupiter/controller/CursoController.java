@@ -31,10 +31,10 @@ public class CursoController {
 	@Autowired
 	private CursoRepository repository;
 
-	// localhost:8080/curso/1
-	@GetMapping("/{usuario_id}")
-	public ResponseEntity<List<Curso>> getAll(@PathVariable Long usuario_id) {
-		return ResponseEntity.ok(cursoService.getAll(usuario_id));
+
+	@GetMapping()
+	public ResponseEntity<List<Curso>> getAll() {
+		return ResponseEntity.ok(cursoService.getAll());
 	}
 
 	

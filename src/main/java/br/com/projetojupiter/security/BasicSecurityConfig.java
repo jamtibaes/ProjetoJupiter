@@ -1,4 +1,4 @@
-package br.com.projetojupiter.controller.security;
+package br.com.projetojupiter.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
