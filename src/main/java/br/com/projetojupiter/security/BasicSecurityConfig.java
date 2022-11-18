@@ -21,14 +21,14 @@ public class BasicSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    //@Bean
-    //public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception{
-    //    return authenticationConfiguration.getAuthenticationManager();
-    //}
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception{
+        return authenticationConfiguration.getAuthenticationManager();
+    }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-       
+    	http.httpBasic();
 
         http.sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -43,7 +43,7 @@ public class BasicSecurityConfig {
                 .antMatchers("/criador/register").permitAll()
                 .antMatchers("/criador/login").permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
-                .anyRequest().authenticated()).httpBasic();
+                .anyRequest().authenticated());
 
         return http.build();
     }
@@ -62,14 +62,5 @@ public class BasicSecurityConfig {
             "/v3/api-docs/**",
             "/swagger-ui/**",
             // other public endpoints of your API may be appended to this array
-            "/usuario/login",
-            "/usuario/register",
-            "/curso",
-            "/conteudos",
-            "/cartao",
-            "/pedido",
-            "/usuario",
-            "/criador/login",
-            "/criador/register"
     };
 }
