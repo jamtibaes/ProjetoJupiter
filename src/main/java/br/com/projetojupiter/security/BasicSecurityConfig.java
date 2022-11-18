@@ -24,8 +24,6 @@ public class BasicSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-
-
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception{
         return authenticationConfiguration.getAuthenticationManager();
@@ -50,7 +48,7 @@ public class BasicSecurityConfig {
                 .antMatchers("/criador/register").permitAll()
                 .antMatchers("/criador/login").permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
-                .anyRequest().authenticated()).httpBasic();
+                .anyRequest().authenticated());
 
         return http.build();
     }
