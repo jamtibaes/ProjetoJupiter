@@ -30,7 +30,7 @@ public class UsuarioService {
     private PedidoRepository pedidoRepository;
     
     @Autowired
-    private SendEmailService sendEmailService;
+    private SendEmailService sendEmailService; //Injetada a classe que tem o metodo de envio de email
 
     public Usuario cadastrarUsuario(Usuario usuario) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
