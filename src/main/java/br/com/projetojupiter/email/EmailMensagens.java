@@ -2,6 +2,7 @@ package br.com.projetojupiter.email;
 
 import br.com.projetojupiter.model.Usuario;
 
+//Classe resposnsável por gerenciar as mensagens que serão enviadas nos emails.
 public class EmailMensagens {
 	
 	public static String createTitle(Usuario usuario) {

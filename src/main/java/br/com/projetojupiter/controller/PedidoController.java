@@ -35,10 +35,9 @@ public class PedidoController {
 				.body(repository.save(pedido));
 	}
 	
-	@PutMapping
+	@PutMapping("/id/{id}")
 	public ResponseEntity<Pedido> put(@RequestBody Pedido pedido) {
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(repository.save(pedido));
 	}
-
 }

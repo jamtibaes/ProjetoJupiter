@@ -38,7 +38,7 @@ public class CursoController {
 	}
 
 	
-	@GetMapping("/{id}")
+	@GetMapping("/id/{id}")
 	public ResponseEntity<Curso> getById(@PathVariable Long id) {
 		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
@@ -60,12 +60,12 @@ public class CursoController {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(curso));
 	}
 	
-	@PutMapping
+	@PutMapping("/id/{id}")
 	public ResponseEntity<Curso> put(@RequestBody Curso curso) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(curso));
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/id/{id}")
 	public void delete(@PathVariable Long id) {
 		repository.deleteById(id);
 	}

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,8 +44,6 @@ public class CriadorController {
 				.body(criadorService.cadastrarCriador(criador));
 	}
 	
-	
-	
 	@GetMapping("/id/{id}")
 	public ResponseEntity<Criador> getById(@PathVariable Long id) {
 		return repository.findById(id)
@@ -52,15 +51,14 @@ public class CriadorController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
-	@PostMapping
-	public ResponseEntity<Criador> post(@RequestBody Criador criador) {
+	@PutMapping("/id/{id}")
+	public ResponseEntity<Criador> put(@RequestBody Criador criador) {
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(repository.save(criador));
 	}
 	
-	@PutMapping
-	public ResponseEntity<Criador> put(@RequestBody Criador criador) {
-		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(repository.save(criador));
+	@DeleteMapping("/id/{id}")
+	public void delete(@PathVariable Long id) {
+		repository.deleteById(id);
 	}
 }

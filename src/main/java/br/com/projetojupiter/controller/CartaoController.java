@@ -35,10 +35,9 @@ public class CartaoController {
 				.body(repository.save(cartao));
 	}
 	
-	@PutMapping
+	@PutMapping("/id/{id}")
 	public ResponseEntity<Cartao> put(@RequestBody Cartao cartao) {
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(repository.save(cartao));
 	}
-
 }
