@@ -31,7 +31,7 @@ public class ConteudoController {
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/id/{id}")
 	public ResponseEntity<Conteudo> getById(@PathVariable Long id) {
 		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
@@ -49,13 +49,13 @@ public class ConteudoController {
 				.body(repository.save(conteudo));
 	}
 	
-	@PutMapping
+	@PutMapping("/id/{id}")
 	public ResponseEntity<Conteudo> put(@RequestBody Conteudo conteudo) {
 		return ResponseEntity.status(HttpStatus.OK)
 				.body(repository.save(conteudo));
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/id/{id}")
 	public void delete(@PathVariable Long id) {
 		repository.deleteById(id);
 	}

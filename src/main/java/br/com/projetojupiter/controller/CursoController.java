@@ -2,6 +2,7 @@ package br.com.projetojupiter.controller;
 
 import java.util.List;
 
+import br.com.projetojupiter.service.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,16 +23,22 @@ import br.com.projetojupiter.repository.CursoRepository;
 @RequestMapping("/curso")
 @CrossOrigin(origins = "*", allowedHeaders="*")
 public class CursoController {
+
+	@Autowired
+	private CursoService cursoService;
+
 	
 	@Autowired
 	private CursoRepository repository;
-	
-	@GetMapping
+
+
+	@GetMapping()
 	public ResponseEntity<List<Curso>> getAll() {
-		return ResponseEntity.ok(repository.findAll());
+		return ResponseEntity.ok(cursoService.getAll());
 	}
+
 	
-	@GetMapping("/{id}")
+	@GetMapping("/id/{id}")
 	public ResponseEntity<Curso> getById(@PathVariable Long id) {
 		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
@@ -53,12 +60,12 @@ public class CursoController {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(curso));
 	}
 	
-	@PutMapping
+	@PutMapping("/id/{id}")
 	public ResponseEntity<Curso> put(@RequestBody Curso curso) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(curso));
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/id/{id}")
 	public void delete(@PathVariable Long id) {
 		repository.deleteById(id);
 	}
