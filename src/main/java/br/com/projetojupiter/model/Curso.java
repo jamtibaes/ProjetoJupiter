@@ -28,6 +28,7 @@ public class Curso {
 	private Long id;
 	
 	@NotNull
+	@Enumerated(EnumType.ORDINAL)
 	@Size(min=5, max=100)
 	private Categoria curso;
 	
