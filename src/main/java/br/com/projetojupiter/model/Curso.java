@@ -28,7 +28,6 @@ public class Curso {
 	private Long id;
 	
 	@NotNull
-	@Enumerated(EnumType.ORDINAL)
 	@Size(min=5, max=100)
 	private Categoria curso;
 	
@@ -73,11 +72,11 @@ public class Curso {
 		this.id = id;
 	}
 
-	public Categoria getCurso() {
+	public String getCurso() {
 		return curso;
 	}
 
-	public void setCurso(Categoria curso) {
+	public void setCurso(String curso) {
 		this.curso = curso;
 	}
 
