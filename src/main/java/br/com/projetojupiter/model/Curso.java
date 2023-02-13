@@ -15,6 +15,10 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
+
+
+
 @Entity
 @Table(name="tb_cursos")
 public class Curso {
@@ -25,7 +29,7 @@ public class Curso {
 	
 	@NotNull
 	@Size(min=5, max=100)
-	private String curso;
+	private Categoria curso;
 	
 	@NotNull
 	@Size(min=5, max=100)
@@ -68,11 +72,11 @@ public class Curso {
 		this.id = id;
 	}
 
-	public String getCurso() {
+	public Categoria getCurso() {
 		return curso;
 	}
 
-	public void setCurso(String curso) {
+	public void setCurso(Categoria curso) {
 		this.curso = curso;
 	}
 
