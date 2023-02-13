@@ -29,7 +29,7 @@ public class Curso {
 	
 	@NotNull
 	@Size(min=5, max=100)
-	private Categoria curso;
+	private String curso;
 	
 	@NotNull
 	@Size(min=5, max=100)
